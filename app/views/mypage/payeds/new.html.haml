@@ -1,0 +1,6 @@
+= simple_form_for @payed,as: :payed,url: mypage_money_box_payeds_path(@box) do |f|
+  .card-body
+    = f.input :name
+  = f.input :price
+  = f.input :payed_at
+  = f.button :submit

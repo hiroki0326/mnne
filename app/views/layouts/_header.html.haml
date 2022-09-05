@@ -15,7 +15,7 @@
         .navbar-nav-between1
           - if current_user.present?
             %li.nav-item.active
-              %a.nav-link{:href => user_mypage_index_path(current_user.id)}Mypage
+              %a.nav-link{:href => user_mypage_index_path(current_user)}Mypage
             %li.nav-item
               %a.nav-link{:href => destroy_user_session_path, method: :delete, data: {confirm: "ログアウトしますか？"}}ログアウト
           - else

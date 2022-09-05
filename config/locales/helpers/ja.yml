@@ -1,0 +1,69 @@
+ja:
+  helpers:
+    select:
+      prompt: 選択してください
+    submit:
+      create: 登録する
+      destroy: 削除する
+      submit: 保存する
+      update: 更新する
+      save: 保存する
+      search: 検索
+      reset: リセット
+      print: 印刷する
+      download: ダウンロード
+      disable: 送信中
+    title:
+      list: "%{model}の一覧"
+      new: "新しい%{model}を作成します"
+      append: "新しい%{model}を追加します"
+      reply: "%{model}の返信をします"
+      edit: "%{model}を編集します"
+      show: "%{model}の詳細情報"
+      cancel: "%{model}のキャンセル"
+    link:
+      new: "新しい%{model}"
+      back: 戻る
+      back_to_list: 一覧に戻る
+      edit: 編集
+      destroy: 削除
+      copy: 複製
+      close: 閉じる
+      show: 詳細を見る
+      cancel: キャンセル
+      search: 検索
+      preview: プレビュー
+    flash:
+      created: "%{model}を作成しました"
+      updated: "%{model}を更新しました"
+      destroyed: "%{model}を削除しました"
+      copied: "%{model}を複製しました"
+      appended: "%{model}を追加しました"
+      canceled: "%{model}をキャンセルしました"
+      destroy_failure: "%{model}を削除できませんでした"
+      cancel_failure: "%{model}をキャンセルできませんでした"
+    front_flash:
+      created: "作成しました"
+      updated: "更新しました"
+      destroyed: "削除しました"
+      copied: "複製しました"
+      appended: "追加しました"
+      canceled: "キャンセルしました"
+      destroy_failure: "削除できませんでした"
+      cancel_failure: "キャンセルできませんでした"
+
+    confirm:
+      destroy: データを削除します。よろしいですか？
+      copy: "%{model}を複製します。よろしいですか？"
+      fix: "%{model}を確定します。よろしいですか？"
+      void: "%{model}を取り消します。よろしいですか？"
+      cancel: "%{model}をキャンセルします。よろしいですか？"
+    breadcrumb:
+      new: 新規
+      edit: 編集
+    disable:
+      sending: 送信しています....
+      waiting: お待ちください
+    message:
+      empty: データがありません
+

@@ -10,6 +10,14 @@ Rails.application.routes.draw do
   root to: 'home#index'
   resources :user do
     resources :mypage
+    namespace :mypage do
+      resources :money_box
+    end
+  end
+  namespace :mypage do
+    resources :money_boxes do
+      resources :payeds
+    end
   end
   namespace :manages do
     resources :life_manages
