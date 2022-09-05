@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>家計簿サイト</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= favicon_link_tag('/assets/images/iwaki.png') %>
+    <%= link{href: "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", rel: "stylesheet", integrity: "sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN", crossorigin: "anonymous" %>
+    <%= script{:src => "//kit.fontawesome.com/85ec27c6b4.js"} %>
+
+    <%= stylesheet_link_tag 'users/main', media: 'all' %>
+    <%= javascript_pack_tag 'users/main' %>
+  </head>
+
+  <body>
+    <%= render 'layouts/header' %>
+    <%= yield %>
+    <script type="text/javascript" src="assets/stylesheets/javascripts/jquery-3.6.0.js"></script>
+    <script type="text/javascript" src="assets/stylesheets/javascripts/bootstrap.bundle.js"></script>
+  </body>
+</html>
