@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_30_022204) do
+ActiveRecord::Schema.define(version: 2022_09_05_073504) do
 
   create_table "fixed_costs", charset: "utf8mb4", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -50,16 +50,12 @@ ActiveRecord::Schema.define(version: 2022_08_30_022204) do
   end
 
   create_table "users", charset: "utf8mb4", force: :cascade do |t|
+    t.string "email"
+    t.string "password_digest"
     t.string "name"
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.string "remember_token"
   end
 
   add_foreign_key "fixed_costs", "users"

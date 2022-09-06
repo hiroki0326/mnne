@@ -1,27 +1,25 @@
-.container
-  .d-flex.flex-column
-    %a{href: new_user_mypage_money_box_path(current_user)}
-      新しいbox
-    今月の出費
-  .d-flex.flex-column
-    - @boxes.each do |box|
-      .mt-3
-        %a{href: new_mypage_money_box_payed_path(box)}
-          新しい出費
-      .card
-        .mt-1.mb-2
-          = box.name
-        - box.payeds.each do |payed|
-          %ul.payed_box
-            %li
-              = payed.name
-              = payed.price
-              円
-            -# %li.ml-2
-            -#   = link_to "×", mypage_money_boxes_payed_path(payed), method: :delete
-        .price.border-top
-          合計金額
-          = box.payeds.all.sum(:price).to_i
-          円
-    
-テスト
+.d-flex.flex-column
+  %a{href: new_user_mypage_money_box_path(@current_user)}
+    新しいbox
+  今月の出費
+.d-flex.flex-column
+  - @boxes.each do |box|
+    .mt-3
+      %a{href: new_mypage_money_box_payed_path(box)}
+        新しい出費
+    .card
+      .mt-1.mb-2
+        = box.name
+      - box.payeds.each do |payed|
+        %ul.payed_box
+          %li
+            = payed.name
+            = payed.price
+            円
+          -# %li.ml-2
+          -#   = link_to "×", mypage_money_boxes_payed_path(payed), method: :delete
+      .price.border-top
+        合計金額
+        = box.payeds.all.sum(:price).to_i
+        円
+

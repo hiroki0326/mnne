@@ -1,4 +1,4 @@
-class Mypage::PayedsController < MainController
+class Mypage::PayedsController < Mypage::MainController
   before_action :find_by_id,only: [:new,:create,:destroy]
 
   def new
@@ -8,7 +8,7 @@ class Mypage::PayedsController < MainController
   def create
     @payed = @box.payeds.new(mypage_payed_params)
     if @payed.save
-      redirect_to user_mypage_index_path(current_user)
+      redirect_to user_mypage_index_path(@current_user)
     else
       render :new
     end
@@ -16,7 +16,7 @@ class Mypage::PayedsController < MainController
 
   def destroy
     if @payed.destroy
-      redirect_to user_mypage_index_path(current_user)
+      redirect_to user_mypage_index_path(@current_user)
     end
   end
 

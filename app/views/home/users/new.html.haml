@@ -1,0 +1,16 @@
+.container
+  = simple_form_for @user, url: user_path do |f|
+
+    = f.label :name
+    = f.text_field :name
+
+    = f.label :email
+    = f.text_field :email
+
+    = f.label :password
+    = f.text_field :password
+
+    = f.label :password_confirmation
+    = f.text_field :password_confirmation
+
+    = f.submit '登録'
