@@ -60,3 +60,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'simple_form'
 gem 'enumerize'
+gem 'jquery-rails'
+gem 'jquery-ui-rails'

@@ -1,4 +1,4 @@
-= simple_form_for @box,as: :box,url: user_mypage_money_box_index_path(current_user) do |f|
+= simple_form_for @box,as: :box,url: user_mypage_money_box_index_path(@current_user) do |f|
   .card-body
     = f.input :name
     = f.button :submit

@@ -1,0 +1,22 @@
+!!!
+%html{lang: 'ja'}
+  %head
+    %title 家計簿サイト
+    %meta{name: "viewport",content: "width=device-width, initial-scale=1"}
+    = csrf_meta_tags
+    = csp_meta_tag
+    = favicon_link_tag('/assets/images/iwaki.png')
+
+    = stylesheet_link_tag 'main', media: 'all'
+    = javascript_include_tag 'main'
+    = csrf_meta_tags
+
+  %body
+    .row
+      .col-1.black-cover
+        = render 'layouts/sidebar'
+      .col-11
+        %header
+          = render 'layouts/header'
+        = yield
+

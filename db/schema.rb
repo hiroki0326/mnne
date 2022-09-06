@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_05_071204) do
+ActiveRecord::Schema.define(version: 2022_09_05_073504) do
 
   create_table "fixed_costs", charset: "utf8mb4", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 2022_09_05_071204) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "remember_token"
   end
 
   add_foreign_key "fixed_costs", "users"
