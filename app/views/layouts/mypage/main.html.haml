@@ -7,22 +7,17 @@
     %meta{name: 'description',content: @page_description}/
     %meta{:content => "ja", "http-equiv" => "content-language"}/
 
-    %title #{Settings.app_name.camelize}
+    %title 家計簿
     %link{href: "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", rel: "stylesheet", integrity: "sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN", crossorigin: "anonymous"}
     %script{:src => "//cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"}
-    = stylesheet_link_tag 'mypage/main', media: 'all'
-    /[if lt IE 9] <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    = javascript_include_tag 'mypage/main'
-    = csrf_meta_tags
-    = display_meta_tags default_meta_tags
+    = stylesheet_link_tag 'main', media: 'all'
+    = javascript_include_tag 'main'
   %body
     %header
       = render 'layouts/mypage/header'
     %main(role="main")
       .container
-        = render 'layouts/messages'
-        %article{class: controller_name}
-          = yield
+        = yield
       .modal.fade#modal{:role => "dialog", :tabindex => "-1"}
     #ajax-loading.d-none
       %p

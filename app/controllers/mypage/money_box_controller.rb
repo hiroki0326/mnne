@@ -14,7 +14,8 @@ class Mypage::MoneyBoxController < Mypage::MainController
   private
   def mypage_money_boxes_params
     params.require(:box).permit(
-      :name
+      :name,
+      :image
     )
   end
 end
