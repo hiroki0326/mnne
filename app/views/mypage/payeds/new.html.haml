@@ -2,5 +2,5 @@
   .card-body
     = f.input :name
   = f.input :price
-  = f.input :payed_at
+  = f.input :payed_at, as: :datetime, html5: true, input_html: {max: "3000-12-31"}
   = f.button :submit

@@ -1,4 +1,5 @@
 class Payed < ApplicationRecord
+  extend Enumerize
   belongs_to :money_box
 
   validates :name, presence: true
