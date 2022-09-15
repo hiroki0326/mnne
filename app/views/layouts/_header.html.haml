@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .container
   %nav.navbar.navbar-light.navbar-expand-lg
     %a.navbar-brand{:href => root_path}LOGO
@@ -21,3 +22,18 @@
           - else
             %li.nav-item
               %a.nav-link{:href => new_login_path}Login or SignUp
+=======
+%ul.list-unstyled.d-flex.flex-row-reverse
+  - if @current_user.present?
+    %li.nav-item
+      %a.nav-link{:href => login_path,data: {method: :delete, confirm: "ログアウトしますか？"}}ログアウト
+    %li.nav-item
+      %a.nav-link{:href => user_mypage_index_path(@current_user)}家計管理
+  - else
+    %li.nav-item
+      %a.nav-link{:href => new_user_path}SignUp
+    %li.nav-item
+      %a.nav-link{:href => new_login_path}Login
+  %li.nav-item
+    %a.nav-link{:href => manages_life_manages_path}家計計算 
+>>>>>>> 5e6116dafcb1f4eaf51b58c0b22058b034dba749
