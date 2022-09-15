@@ -1,19 +1,23 @@
-%nav.navbar.navbar-light.navbar-expand-lg
-  %button.navbar-toggler{:type => "button", "data-toggle" => "collapse", "data-target" => "#navbarNav", "aria-controls" => "navbarNav", "aria-expanded" => "false", "aria-label" => "Toggle navigation"}
-    %span.navbar-toggler-icon
-  .collapse.navbar-collapse.float-left#navbarNav
-    %ul.navbar-nav.navbar-nav-between
-      .navbar-nav-between1
-        %li.nav-item.active
-          %a.nav-link{:href => manages_life_manages_path}家計計算 
-      .navbar-nav-between1
-        - if @current_user.present?
+.container
+  %nav.navbar.navbar-light.navbar-expand-lg
+    %a.navbar-brand{:href => root_path}LOGO
+    %button.navbar-toggler{:type => "button", "data-toggle" => "collapse", "data-target" => "#navbarNav", "aria-controls" => "navbarNav", "aria-expanded" => "false", "aria-label" => "Toggle navigation"}
+      %span.navbar-toggler-icon
+    .collapse.navbar-collapse.float-left#navbarNav
+      %ul.navbar-nav.navbar-nav-between
+        .navbar-nav-between1
           %li.nav-item.active
-            %a.nav-link{:href => user_mypage_index_path(@current_user)}家計管理
+            %a.nav-link{:href => manages_life_manages_path}家計計算 
           %li.nav-item
-            %a.nav-link{:href => login_path,data: {method: :delete, confirm: "ログアウトしますか？"}}ログアウト
-        - else
+            %a.nav-link{:href => "#"}貯蓄計算
           %li.nav-item
-            %a.nav-link{:href => new_user_path}SignUp
-          %li.nav-item
-            %a.nav-link{:href => new_login_path}Login
+            %a.nav-link.disabled{:href => "#"}未来予想
+        .navbar-nav-between1
+          - if @current_user.present?
+            %li.nav-item.active
+              %a.nav-link{:href => user_mypage_index_path(@current_user)}Mypage
+            %li.nav-item
+              %a.nav-link{:href => login_path, method: :delete, data: {confirm: "ログアウトしますか？"}}ログアウト
+          - else
+            %li.nav-item
+              %a.nav-link{:href => new_login_path}Login or SignUp
