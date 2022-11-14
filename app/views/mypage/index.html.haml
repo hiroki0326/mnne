@@ -4,45 +4,42 @@
     %li.nav-item
       %a#list-tab.nav-link.active{"aria-controls" => "home", "aria-selected" => "true", "data-toggle" => "tab", :href => "#list", :role => "tab"}
         %i.fa.fa-list
-        金額管理
+        出費管理
     %li.nav-item
       %a#this-month.nav-link{"aria-controls" => "profile", "aria-selected" => "false", "data-toggle" => "tab", :href => "#thismonth", :role => "tab"}
         %i.fa.fa-clock-o
-        出費管理
+        貯蓄管理
     %li.nav-item
       %a#last-month.nav-link{"aria-controls" => "profile", "aria-selected" => "false", "data-toggle" => "tab", :href => "#lastmonth", :role => "tab"}
         %i.fa.fa-pencil
-        貯蓄管理
+        過去
 %section.tab-content
   #list.tab-pane.fade.show.active{:role => "tabpanel"}
-    基本情報
+  - @user_infos.each do |info|
+    .mb-5
+      今月使えるおかね
+      = info.use_ok_money
+      %br
+      今月の収入
+      = info.income
+      %br
+      目標貯金額
+      = info.target_save
+      %br
+      固定費
+      = current_user.id
+      
   #thismonth.tab-pane.fade{:role => "tabpanel"}
-    .container
-      .d-flex.flex-column
-        %a{href: new_user_mypage_money_box_path(@current_user)}
-          新しいbox
-        %p.text-danger 今月の出費
-      .d-flex.flex-column
-        - @boxes.each do |box|
-          .mt-3
-            %a{href: new_mypage_money_box_payed_path(box)}
-              新しい出費
-          .card.background-cover-white-10
-            .mt-1.mb-2
-              - if box.image.attached?
-                = image_tag box.image.variant(resize: '100x100')
-              = box.name
-              合計金額
-              = box.payeds.all.sum(:price).to_i
-              円
-            -# - box.payeds.each do |payed|
-            -#   %ul.payed_box
-            -#     %li
-            -#       = payed.name
-            -#       = payed.price
-            -#       円
-                -# %li.ml-2
-                -#   = link_to "×", mypage_money_boxes_payed_path(payed), method: :delete
-            .border-top
+    = render 'this_month'
+  -# - box.payeds.each do |payed|
+  -#   %ul.payed_box
+  -#     %li
+  -#       = payed.name
+  -#       = payed.price
+  -#       円
+      -# %li.ml-2
+      -#   = link_to "×", mypage_money_boxes_payed_path(payed), method: :delete
+  
   #lastmonth.tab-pane.fade{:role => "tabpanel"}
-    いいいいいいい
+    = render 'last_month'
+

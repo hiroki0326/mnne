@@ -1,0 +1,122 @@
+table.table
+  @extend .bg-white
+table.table-list
+  @extend .table
+  @extend .table-bordered
+  @extend .table-striped
+  @extend .table-hover
+  @extend .bg-white
+  thead
+    @extend .thead-light !optional
+    th
+      text-align: center
+table.table-linked-list
+  @extend .table-list !optional
+  tbody
+    tr:hover
+      cursor: pointer
+table.table-auto-width
+  width: auto
+table.th-colored th
+  background-color: red
+  width: 50%
+
+table.table-check-list-style
+  &.proxy_bank_sent
+    tr
+      th
+        width: calc(95% / 6)
+        &:first-of-type
+          width: 5%
+    &.postal
+      tr
+        th
+          &:first-of-type
+            width: 5%
+          &:nth-of-type(n+2):nth-child(-n+3), &:nth-of-type(n+5):nth-child(-n+6)
+            width: 10%
+          &:nth-of-type(n+4), &:nth-child(n+7)
+            width: 15%
+    &.bank
+      tr
+        th
+          width: calc(95% / 9)
+          &:first-of-type
+            width: 5%
+  &.hotel_order_bank
+    tr
+      th
+        width: 10%
+  &.hotel_refund_fixes
+      tr
+        th
+          width: calc(95% / 7)
+          &:first-of-type
+            width: 5%
+
+table.table-style
+  &.hotel_order_price
+    tr
+      th
+        width: 10%
+        &:nth-of-type(2)
+          width: 18%
+        &:nth-of-type(n+4):nth-child(-n+5)
+          width: 5%
+  &.hotel_order_body_price
+    @extend .col-lg-9
+    tr
+      th
+        width: 10%
+        &:nth-child(n+1):nth-child(-n+2)
+          width: 35%
+  &.hotel_order_body_receive
+    @extend .col-lg-9
+    tr
+      th
+        &:first-child
+          width: 15%
+        &:nth-child(n+2):nth-child(-n+3)
+          width: 25%
+        &:nth-child(4)
+          width: 20%
+        &:last-child
+          width: 10%
+  &.hotel_order_comment
+    @extend .col-lg-12
+    margin-bottom: 1rem
+    tr
+      th
+        &:nth-child(2)
+          width: 20%
+        &:first-child, &:last-child
+          width: 40%
+  &.hotel_order_reserve
+    tr
+      th
+        width: 30%
+  &.hotel_order_other
+    tr
+      th
+        width: 10%
+        &:nth-child(n+2):nth-child(-n+3)
+          width: 30%
+  &.hotel_order_bank
+    tr
+      th
+        width: 10%
+  &.proxy_paper
+    tr
+      th
+        width: calc(45% / 2)
+        &:first-of-type
+          width: 5%
+        &:nth-child(n+2):nth-child(-n+3),&:nth-child(n+6):nth-child(-n+8)
+          width: 10%
+  &.hotel_event_receipt_limit
+    border: none
+    tbody
+      tr
+        background-color: transparent
+        th,td
+          border: none

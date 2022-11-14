@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_07_005830) do
+ActiveRecord::Schema.define(version: 2022_11_02_022917) do
 
   create_table "active_storage_attachments", charset: "utf8mb4", force: :cascade do |t|
     t.string "name", null: false
@@ -41,12 +41,11 @@ ActiveRecord::Schema.define(version: 2022_09_07_005830) do
   end
 
   create_table "fixed_costs", charset: "utf8mb4", force: :cascade do |t|
-    t.bigint "user_id", null: false
     t.string "name"
     t.string "price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_fixed_costs_on_user_id"
+    t.string "user_id"
   end
 
   create_table "money_boxes", charset: "utf8mb4", force: :cascade do |t|
@@ -78,6 +77,17 @@ ActiveRecord::Schema.define(version: 2022_09_07_005830) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "user_infos", charset: "utf8mb4", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "income"
+    t.string "target_save"
+    t.string "use_ok_money"
+    t.date "month"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_user_infos_on_user_id"
+  end
+
   create_table "users", charset: "utf8mb4", force: :cascade do |t|
     t.string "email"
     t.string "password_digest"
@@ -89,7 +99,7 @@ ActiveRecord::Schema.define(version: 2022_09_07_005830) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "fixed_costs", "users"
   add_foreign_key "money_boxes", "users"
   add_foreign_key "pay_futures", "users"
+  add_foreign_key "user_infos", "users"
 end

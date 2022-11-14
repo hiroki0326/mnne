@@ -1,0 +1,37 @@
+%section.headings
+  %a.btn.btn-sm.btn-outline-primary{href: "#"}
+    %i.fa.fa-plus
+    新しい貯蓄
+
+  - if @boxes.exists?
+    -# = page_navigation @boxes
+    .table-responsive-sm
+      %table.table-linked-list
+        %thead
+          %tr
+            %th
+              テスト１
+            %th
+              テスト２
+            %th
+              テスト３
+            %th
+              テスト４
+            %th
+              テスト５
+        %tbody
+          - @boxes.each do |box|
+            %tr
+              %td
+                = box.name
+              %td
+                = box.name
+              %td.text-right
+                = box.name
+              %td.text-right
+                = box.name
+              %td
+                = box.name
+
+  - else
+    = card_empty
